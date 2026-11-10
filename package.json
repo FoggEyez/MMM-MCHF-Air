@@ -1,0 +1,29 @@
+{
+  "name": "mmm-mischieflocalconditions",
+  "version": "0.1.0",
+  "description": "Regional US air quality observations and active NWS weather alerts.",
+  "license": "MIT",
+  "author": "FoggEyez",
+  "keywords": [
+    "magicmirror",
+    "magicmirror-module",
+    "mischief",
+    "weather",
+    "air-quality",
+    "alerts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FoggEyez/MMM-MischiefLocalConditions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FoggEyez/MMM-MischiefLocalConditions/issues"
+  },
+  "homepage": "https://github.com/FoggEyez/MMM-MischiefLocalConditions#readme",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  }
+}

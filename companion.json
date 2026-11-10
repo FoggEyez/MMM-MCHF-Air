@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "module": "MMM-MischiefLocalConditions",
+  "title": "Mischief Local Conditions",
+  "recommendedPosition": "top_left",
+  "singleInstance": true,
+  "requires": [],
+  "notes": "All supported settings are literal defaults in the module entry. No companion is required. This manifest documents the contract; current MMM-Config discovers defaults from JavaScript.",
+  "supportedSettings": [
+    "latitude",
+    "longitude",
+    "locationConfigured",
+    "timeZone",
+    "panelWidth",
+    "showSmokeAdvisories",
+    "showObservedTime",
+    "maxAlerts"
+  ]
+}
