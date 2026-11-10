@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "module": "MMM-MischiefLocalConditions",
-  "title": "Mischief Local Conditions",
+  "module": "MMM-MCHF-Air",
+  "title": "MCHF-Air",
   "recommendedPosition": "top_left",
   "singleInstance": true,
   "requires": [],

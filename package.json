@@ -1,6 +1,6 @@
 {
-  "name": "mmm-mischieflocalconditions",
-  "version": "0.1.0",
+  "name": "mmm-mchf-air",
+  "version": "0.2.0",
   "description": "Regional US air quality observations and active NWS weather alerts.",
   "license": "MIT",
   "author": "FoggEyez",
@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/FoggEyez/MMM-MischiefLocalConditions.git"
+    "url": "https://github.com/FoggEyez/MMM-MCHF-Air.git"
   },
   "bugs": {
-    "url": "https://github.com/FoggEyez/MMM-MischiefLocalConditions/issues"
+    "url": "https://github.com/FoggEyez/MMM-MCHF-Air/issues"
   },
-  "homepage": "https://github.com/FoggEyez/MMM-MischiefLocalConditions#readme",
+  "homepage": "https://github.com/FoggEyez/MMM-MCHF-Air#readme",
   "engines": {
     "node": ">=22"
   },

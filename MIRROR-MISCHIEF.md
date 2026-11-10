@@ -1,3 +1,5 @@
+**MCHF = Mischief. Air — Air quality and local alerts.**
+
 # Use this module with Mirror Mischief
 
 [Mirror Mischief project hub](https://github.com/FoggEyez/Mirror-Mischief) · [All Mischief modules](https://github.com/FoggEyez/Mirror-Mischief#mirror-mischief)

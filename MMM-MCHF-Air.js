@@ -1,8 +1,8 @@
 /* global Module,LocalConditionsModel */
-Module.register('MMM-MischiefLocalConditions',{
+Module.register('MMM-MCHF-Air',{
  requiresVersion:'2.38.0',
  defaults:{latitude:0,longitude:0,locationConfigured:false,timeZone:'',panelWidth:350,showSmokeAdvisories:true,showObservedTime:true,maxAlerts:3},
- getScripts(){return [this.file('conditions-model.js')];},getStyles(){return [this.file('MMM-MischiefLocalConditions.css')];},
+ getScripts(){return [this.file('conditions-model.js')];},getStyles(){return [this.file('mischief-surfaces.css'),this.file('MMM-MCHF-Air.css')];},
  start(){this.snapshot=null;this.sendSocketNotification('CONDITIONS_START',this.config);this.timer=setInterval(()=>this.updateDom(0),60000);},
  socketNotificationReceived(name,data){if(name==='CONDITIONS_DATA'){if(this.snapshot?.air?.fetchedAt===data?.air?.fetchedAt&&this.snapshot?.alerts?.checkedAt===data?.alerts?.checkedAt)return;this.snapshot=data;this.updateDom(0);}},
  suspend(){clearInterval(this.timer);},resume(){clearInterval(this.timer);this.timer=setInterval(()=>this.updateDom(0),60000);this.sendSocketNotification('CONDITIONS_START',this.config);},

@@ -1,10 +1,10 @@
-# MMM-MischiefLocalConditions
+# MMM-MCHF-Air
 
 Regional US air quality observations and active NWS weather alerts.
 
 Part of [Mirror Mischief](https://github.com/FoggEyez/Mirror-Mischief). Install and configure manually, or use the optional companion.
 
-![MMM-MischiefLocalConditions rendered example](docs/screenshot.png)
+![MMM-MCHF-Air rendered example](docs/screenshot.png)
 
 Screenshot uses the actual module renderer in an isolated preview. Network/health/economy readings are labelled synthetic demonstration data, not live readings.
 
@@ -14,7 +14,7 @@ Requires a working MagicMirror² installation, Node.js 22 or newer, and a curren
 
 ```sh
 cd ~/MagicMirror/modules
-git clone https://github.com/FoggEyez/MMM-MischiefLocalConditions.git
+git clone https://github.com/FoggEyez/MMM-MCHF-Air.git
 ```
 
 No npm runtime dependencies or install scripts. No extra services are required.
@@ -23,7 +23,7 @@ Add this to the modules array in config/config.js, then restart MagicMirror²:
 
 ```js
 {
-  module: "MMM-MischiefLocalConditions",
+  module: "MMM-MCHF-Air",
   position: "top_left",
   config: {}
 }

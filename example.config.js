@@ -1,5 +1,5 @@
 module.exports = {
-  module: "MMM-MischiefLocalConditions",
+  module: "MMM-MCHF-Air",
   position: "top_left",
   config: {}
 };
