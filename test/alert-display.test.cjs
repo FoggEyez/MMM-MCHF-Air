@@ -1,0 +1,12 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+function fixture(){
+ class Element{constructor(){this.children=[];this.text='';this.style={};}append(...nodes){this.children.push(...nodes);}set textContent(value){this.text=String(value);}get textContent(){return this.text+this.children.map(c=>c.textContent).join(' ');}set innerHTML(value){throw Error('Alert content must never become HTML');}}
+ let definition;vm.runInNewContext(fs.readFileSync(require.resolve('../MMM-MCHF-Air.js'),'utf8'),{Module:{register:(name,value)=>definition=value},document:{createElement:()=>new Element()},LocalConditionsModel:require('../conditions-model.js')});
+ const instance={...definition,config:{...definition.defaults,locationConfigured:true},snapshot:{alerts:{checkedAt:Date.now(),items:[]}}},all=root=>[root,...root.children.flatMap(function walk(e){return[e,...e.children.flatMap(walk)];})];return {instance,all};
+}
+test('severe instructions are visible text with bounded lengths and no HTML execution',()=>{
+ const {instance,all}=fixture();instance.snapshot.alerts.items=[{event:'Severe warning',severity:'Severe',expires:Date.now()+60000,headline:'<img src=x onerror=alert(1)> '+ 'Headline '.repeat(80),instruction:'<script>doNotRun()</script> '+ 'Advice '.repeat(100)}];const nodes=all(instance.getDom()),headline=nodes.find(n=>n.className==='lc-alert-headline'),instruction=nodes.find(n=>n.className==='lc-alert-instruction');assert.ok(headline);assert.ok(instruction);assert.ok(headline.textContent.length<=180);assert.ok(instruction.textContent.length<=280);assert.match(headline.textContent,/<img/);assert.match(instruction.textContent,/<script>/);assert.match(instruction.textContent,/…$/);
+});
+test('stale and expired alerts never expose old instructions; ordinary alerts stay compact',()=>{
+ const {instance,all}=fixture();const alert={event:'Advisory',severity:'Moderate',expires:Date.now()+60000,headline:'Read this',instruction:'Do this'};instance.snapshot.alerts.items=[alert];assert.equal(all(instance.getDom()).some(n=>n.className==='lc-alert-instruction'),false);alert.severity='Extreme';alert.expires=Date.now()-1;assert.equal(all(instance.getDom()).some(n=>n.className==='lc-alert-instruction'),false);alert.expires=Date.now()+60000;instance.snapshot.alerts.checkedAt=Date.now()-700000;assert.equal(all(instance.getDom()).some(n=>n.className==='lc-alert-instruction'),false);
+});

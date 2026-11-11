@@ -2,3 +2,4 @@
 .lc-heading{font-size:9px;letter-spacing:1.7px;color:#b8c9bf;margin-bottom:5px}.lc-summary{display:flex;align-items:center;justify-content:space-between;gap:8px}.lc-number{font-size:25px;line-height:1.15;font-weight:500}.lc-label{font-size:10px}.lc-origin{text-align:right;font-size:9px;color:#9eb5a6}.lc-alert{font-size:10px;margin-top:4px}.lc-smoke{font-size:9px;color:#a2b8aa}.lc-credit{font-size:8px;color:#8fa799;margin-top:4px}.lc-credit a{color:inherit;text-decoration:none}.lc-card .green{color:#72c69d}.lc-card .yellow{color:#ddc980}.lc-card .red{color:#e79b8c}
 @media(max-width:1200px){.lc-card{width:300px!important}}
 .MMM-MCHF-Air{margin-bottom:12px!important}.MMM-MCHF-Air .lc-card{margin-bottom:0}
+.lc-alert-headline{margin-top:3px;font-size:11px;line-height:1.45;overflow-wrap:anywhere}.lc-alert-instruction{margin-top:3px;padding-left:8px;border-left:2px solid currentColor;font-size:10px;line-height:1.5;color:#d9e2da;overflow-wrap:anywhere}
